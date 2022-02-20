@@ -19,7 +19,8 @@ This document contains the following details:
 - [How to Use the Ansible Build](#ansibleplay)
 
 
-<a name="desc"></a>### Description of the Topology
+<a name="desc"></a>
+### Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -40,7 +41,8 @@ The configuration details of each machine may be found below.
 | ge-gt-vm-web02    | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
 
-<a name="access"></a>### Access Policies
+<a name="access"></a>
+### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -130,7 +132,8 @@ These Beats allow us to collect the following information from each machine:
 ![Metricbeat logs](Images/metricbeat-logs.png)
 
 
-<a name="ansibleplay">### Using the Playbook
+<a name="ansibleplay">
+### Using the Playbook
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
