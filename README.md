@@ -11,7 +11,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - metricbeat-playbook.yml (https://github.com/dinshetty/ge-gt-elk-project/blob/main/Ansible/metricbeat-playbook.yml) - Ansible playbook for installing metricbeat agent on webservers
  
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
