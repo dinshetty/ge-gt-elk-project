@@ -88,7 +88,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![docker ps output](Images/docker_ps_output.png)
+![docker ps output](Images/elk-docker-ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines where apache http webserver running on:
@@ -130,7 +130,7 @@ SSH into the control node and follow the steps below:
 
 In case if ELK, confirm the docker process is running in ELK virtual machine 
 
-![docker ps output](Images/docker_ps_output.png)
+![docker ps output](Images/elk-docker-ps.png)
 
 Also confirm Kibana URL up by navigating to the URL - http://40.83.160.153:5601/app/kibana in any browser. If you get the below screen, playbook successfully executed
 
