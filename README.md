@@ -88,7 +88,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines where apache http webserver running on:
@@ -116,7 +116,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the playbook file to /etc/ansible/. Below screenshot shows all the playbooks related to elk, filebeat and metricbeat
+- Copy the playbook file to /etc/ansible/. Below screenshot shows all the playbooks related to elk (install-elk.yml), filebeat (filebeat-playbook.yml) and metricbeat ( metricbeat-playbook.yml)
 
 ![ansible playbook](Images/ansible-copy.png)
 
@@ -128,9 +128,13 @@ SSH into the control node and follow the steps below:
 
 ![hosts target](Images/target-host.png)
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+In case if ELK, confirm the docker process is running in ELK virtual machine 
+
+![docker ps output](Images/docker_ps_output.png)
+
+Also confirm Kibana URL up by navigating to the URL - http://40.83.160.153:5601/app/kibana in any browser. If you get the below screen, playbook successfully executed
+
+![Kibana](Images/kibana.png)
+
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
