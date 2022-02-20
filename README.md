@@ -32,12 +32,12 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name            | Function   | IP Address | Operating System |Public IP      |
-|-----------------|------------|------------|------------------|--------------- 
-| Jump Box        | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
-| elk-vm          | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
-| ge-gt-vm-web01  | Webserver  | 10.0.0.12  | Linux            |  NA           |
-| ge-gt-vm-web02  | Webserver  | 10.0.0.13  | Linux            |  NA           | 
+| Name              | Function   | IP Address | Operating System |Public IP      |
+|-------------------|------------|------------|------------------|--------------- 
+| ge-gt-vm-jumboxer | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
+| elk-vm            | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
+| ge-gt-vm-web01    | Webserver  | 10.0.0.12  | Linux            |  NA           |
+| ge-gt-vm-web02    | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
 ### Access Policies
 
@@ -100,7 +100,8 @@ This ELK server is configured to monitor the following machines:
 
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- FileBeat (dpkg -i filebeat-7.4.0-amd64.deb) -- refer the ansible playbook [filebeat-playbook.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/filebeat-playbook.yml) 
+- MetricBeat (metricbeat-7.4.0-amd64.deb) - refer the ansible playbook [metricbeat-playbook.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/metricbeat-playbook.yml) 
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
