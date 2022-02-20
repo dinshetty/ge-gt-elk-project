@@ -43,10 +43,10 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Client IP - 99.77.113.4 is whitlisted to allow connection to jump box via port 22. This rule is configured in Network Security Group (NSG)
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by Jump box as well ELK servers.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
@@ -59,13 +59,17 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same configuration machine can be built again & again without any human intervention. Refer to anisble playbook - [install-elk.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/install-elk.yml) for aditional details. Below explains each section in playbook
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Download & install Docker
+  ![Docker Install](Images/install-docker.png)
+- Download & install python3-pip module
+
+- Download & install python docker module
+- Update max_map_count for ELK with additional memory
+- Download & install ELK stack using docker image sebp/elk:761
+- Enable docker service to kickoff on machine restart
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
