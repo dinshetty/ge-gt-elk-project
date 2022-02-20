@@ -31,14 +31,13 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _TODO: What does Metricbeat record?_
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |Public IP |
-|----------|----------|------------|------------------|----------
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |          |
-| TODO     |          |            |                  |          |
-| TODO     |          |            |                  |          |
-| TODO     |          |            |                  |          | 
+| Name            | Function   | IP Address | Operating System |Public IP      |
+|-----------------|------------|------------|------------------|--------------- 
+| Jump Box        | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
+| ELK Server      | ELK stack  | 10.2.0.4   | Linux            |  NA           |
+| ge-gt-vm-web01  | Webserver  | 10.0.0.12  | Linux            |  NA           |
+| ge-gt-vm-web02  | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
 ### Access Policies
 
