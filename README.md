@@ -16,7 +16,7 @@ This document contains the following details:
 - [ELK Configuration](#elkconifg)
   - Beats in Use
   - Machines Being Monitored
-- [How to Use the Ansible Build](#ansbile)
+- [How to Use the Ansible Build](#ansible)
 
 
 <a name="desc"></a>### Description of the Topology
