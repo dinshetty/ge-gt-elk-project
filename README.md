@@ -32,21 +32,21 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 The configuration details of each machine may be found below.
 
-| Name            | Function   | IP Address | Operating System |Public IP      |
-|-----------------|------------|------------|------------------|--------------- 
-| Jump Box        | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
-| elk-vm          | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
-| ge-gt-vm-web01  | Webserver  | 10.0.0.12  | Linux            |  NA           |
-| ge-gt-vm-web02  | Webserver  | 10.0.0.13  | Linux            |  NA           | 
+| Name              | Function   | IP Address | Operating System |Public IP      |
+|-------------------|------------|------------|------------------|--------------- 
+| ge-gt-vm-jumboxer | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
+| elk-vm            | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
+| ge-gt-vm-web01    | Webserver  | 10.0.0.12  | Linux            |  NA           |
+| ge-gt-vm-web02    | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Client IP - 99.77.113.4 is whitlisted to allow connection to jump box via port 22. This rule is configured in Network Security Group (NSG)
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by Jump box as well ELK servers.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
@@ -59,13 +59,32 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same configuration machine can be built again & again without any human intervention. Refer to anisble playbook - [install-elk.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/install-elk.yml) for aditional details. Below explains each section in playbook
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Download & install Docker
+
+  ![Docker Install](Images/install-docker.png)
+
+- Download & install python3-pip module
+  
+  ![Python Pip Install](Images/install-pip.png)
+
+- Download & install python docker module
+
+  ![Docker Module Install](Images/install-docker-module.png)
+   
+- Update max_map_count for ELK with additional memory
+  
+  ![Increase memory](Images/elk-memory.png)
+
+- Download & install ELK stack using docker image sebp/elk:761
+
+  ![Install ELK](Images/install-elk-docker.png)
+  
+- Enable docker service to kickoff on machine restart/on boot
+
+  ![Start Docker as service](Images/docker-boot.png)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -73,10 +92,16 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+
+| Name            | Function   | IP Addresses | Operating Systems   | Softwares           |  Port  |
+|-----------------|---------------------------|---------------------|---------------------|--------|-------
+| ge-gt-vm-web01  | Webserver  | 10.0.0.12    | Linux               |  Apache HTTP Server | 80     |
+| ge-gt-vm-web02  | Webserver  | 10.0.0.13    | Linux               |  Apache HTTP Server | 80     | 
+
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- FileBeat (dpkg -i filebeat-7.4.0-amd64.deb) -- refer the ansible playbook [filebeat-playbook.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/filebeat-playbook.yml) 
+- MetricBeat (metricbeat-7.4.0-amd64.deb) - refer the ansible playbook [metricbeat-playbook.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/metricbeat-playbook.yml) 
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
