@@ -27,8 +27,8 @@ Load balancing ensures that the application will be highly available, in additio
 - Load balancer protects the servers catering the content and webservers can be accessed via load balancer only. Jumpbox is the single point of entry for all servers access within the VPN and this protects the servers by not directly exposing outside. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the webserver logs and system logs.
-- Filebeat agents collects the logs from webservers (httpd -apache) and send it logstash
-- Metricbeat agents collects the logs from system related cpu, memory etc and send it logstash
+- Filebeat agents collects the logs from webservers (httpd -apache) and send it logstash/elasiticsearch
+- Metricbeat agents collects the logs from system related cpu, memory etc and send it logstash/elasiticsearch
 
 The configuration details of each machine may be found below.
 
@@ -135,6 +135,3 @@ In case if ELK, confirm the docker process is running in ELK virtual machine
 Also confirm Kibana URL up by navigating to the URL - http://40.83.160.153:5601/app/kibana in any browser. If you get the below screen, playbook successfully executed
 
 ![Kibana](Images/kibana.png)
-
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
