@@ -63,13 +63,28 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - Download & install Docker
+
   ![Docker Install](Images/install-docker.png)
+
 - Download & install python3-pip module
+  
+  ![Python Pip Install](Images/install-pip.png)
 
 - Download & install python docker module
+
+  ![Docker Module Install](Images/install-docker-module.png)
+   
 - Update max_map_count for ELK with additional memory
+  
+  ![Increase memory](Images/elk-memory.png)
+
 - Download & install ELK stack using docker image sebp/elk:761
-- Enable docker service to kickoff on machine restart
+
+  ![Install ELK](Images/install-elk-docker.png)
+  
+- Enable docker service to kickoff on machine restart/on boot
+
+  ![Start Docker as service](Images/docker-boot)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
