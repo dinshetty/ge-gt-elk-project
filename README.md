@@ -46,7 +46,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Jumpbox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - Client IP - 99.77.119.8 is whitlisted to allow connection to jump box via port 22. This rule is configured in Network Security Group (NSG)
 
-![NSG VN](Images/virtual-network-nsg)
+![NSG VN](Images/virtual-network-nsg.png)
 
 
 Machines within the network can only be accessed by Jump box as well ELK servers.
@@ -64,7 +64,7 @@ A summary of the access policies in place can be found in the table below.
 
 Network Access Group - Inbound rules to allow jumpbox host access from specific client IP on port 22 (ssh) and allow jumpbox to access any IP in within the vitual network.
 
-![NSG VN](Images/virtual-network-nsg)
+![NSG VN](Images/virtual-network-nsg.png)
 
 
 
