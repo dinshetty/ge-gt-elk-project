@@ -59,11 +59,14 @@ Machines within the network can only be accessed by Jump box as well ELK servers
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Name         | Publicly Accessible | Allowed IP Addresses | Destination  Port | Destination     | Description                                              |
+|--------------|---------------------|----------------------|-------------------|-----------------|----------------------------------------------------------|   
+| JumpBox      | No                  | 10.0.0.4             |  22               |Virtual network  | Jumpbox to connect on port 22 to any host in vn          |               
+| Port_80      | Yes                 | 99.77.119.8          |  80               |Virtual network  | Specific client can connect to port 80 to any host in vn |
+| Port_120     | Ye                  | 99.77.119.8          |  22               |10.0.0.4         | Connect from client on port 22 for jumpbox               | 
+|Port_5601_ELK | Yes                 | 99.77.119.8          |  5601             |Virtual network  |                                                          |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Network Access Group - Inbound rules to allow jumpbox host access from specific client IP on port 22 (ssh) and allow jumpbox to access any IP in within the vitual network.
 
