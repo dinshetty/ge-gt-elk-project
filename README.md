@@ -16,7 +16,7 @@ This document contains the following details:
 - [ELK Configuration](#elkconifg)
   - Beats in Use
   - Machines Being Monitored
-- [How to Use the Ansible Build](#ansible)
+- [How to Use the Ansible Build](#ansibleplay)
 
 
 <a name="desc"></a>### Description of the Topology
@@ -129,7 +129,9 @@ These Beats allow us to collect the following information from each machine:
 
 ![Metricbeat logs](Images/metricbeat-logs.png)
 
-<a name="ansible">### Using the Playbook
+
+<a name="ansibleplay">### Using the Playbook
+
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
