@@ -34,7 +34,7 @@ The configuration details of each machine may be found below.
 
 | Name              | Function   | IP Address | Operating System |Public IP      |
 |-------------------|------------|------------|------------------|--------------- 
-| ge-gt-vm-jumboxer | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
+| ge-gt-vm-jumboxer | Gateway    | 10.0.0.4   | Linux            | 20.85.227.175 |
 | elk-vm            | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
 | ge-gt-vm-web01    | Webserver  | 10.0.0.12  | Linux            |  NA           |
 | ge-gt-vm-web02    | Webserver  | 10.0.0.13  | Linux            |  NA           | 
@@ -56,6 +56,17 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
+
+Network Access Group - Inbound rules to allow jumpbox host access from specific client IP on port 22 (ssh) and allow jumpbox to access any IP in within the vitual network.
+
+
+
+
+
+Network Access Group - Inbound rules for ELK to allow specific client IP to access ELK host with port 5601
+
+![NSG ELK](Images/elk-nsg.png)
+
 
 ### Elk Configuration
 
