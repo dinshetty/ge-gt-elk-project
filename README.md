@@ -124,7 +124,9 @@ SSH into the control node and follow the steps below:
 
 ![hosts file](Images/hosts-file.png)
 
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to target hosts to check that the installation worked as expected. Hosts file list down the grouping of servers. For example webservers, elk. Playbook yaml file will have hosts tag with targted host group name. Example elk as in screenshot
+
+![hosts target](Images/target-host.png)
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
