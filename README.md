@@ -35,7 +35,7 @@ The configuration details of each machine may be found below.
 | Name            | Function   | IP Address | Operating System |Public IP      |
 |-----------------|------------|------------|------------------|--------------- 
 | Jump Box        | Gateway    | 10.0.0.1   | Linux            | 20.85.227.175 |
-| ELK Server      | ELK stack  | 10.2.0.4   | Linux            |  NA           |
+| elk-vm          | ELK stack  | 10.2.0.4   | Linux            | 40.86.168.39  |
 | ge-gt-vm-web01  | Webserver  | 10.0.0.12  | Linux            |  NA           |
 | ge-gt-vm-web02  | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
