@@ -110,7 +110,7 @@ These Beats allow us to collect the following information from each machine:
 
 - MetricBeat collects all the system informations like cpu, memory etc for the analysis to logstash, which is indexed by elasticsearch and displayed on Kibana as below
 
-![Metricbeat logs](Images/Metricbeat-logs.png)
+![Metricbeat logs](Images/metricbeat-logs.png)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
