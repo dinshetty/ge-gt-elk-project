@@ -26,9 +26,9 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - Load balancer protects the servers catering the content and webservers can be accessed via load balancer only. Jumpbox is the single point of entry for all servers access within the VPN and this protects the servers by not directly exposing outside. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the webserver logs and system logs.
+- Filebeat agents collects the logs from webservers (httpd -apache) and send it logstash
+- Metricbeat agents collects the logs from system related cpu, memory etc and send it logstash
 
 The configuration details of each machine may be found below.
 
