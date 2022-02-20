@@ -76,7 +76,8 @@ Network Access Group - Inbound rules for ELK to allow specific client IP to acce
 ![NSG ELK](Images/elk-nsg.png)
 
 
-<a name="elkconifg"></a>### Elk Configuration
+<a name="elkconifg"></a>
+### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same configuration machine can be built again & again without any human intervention. Refer to anisble playbook - [install-elk.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/install-elk.yml) for aditional details. Below explains each section in playbook
 
@@ -132,7 +133,7 @@ These Beats allow us to collect the following information from each machine:
 ![Metricbeat logs](Images/metricbeat-logs.png)
 
 
-<a name="ansibleplay">
+<a name="ansibleplay"></a>
 ### Using the Playbook
 
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
