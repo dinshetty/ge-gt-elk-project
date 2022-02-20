@@ -91,7 +91,7 @@ The following screenshot displays the result of running `docker ps` after succes
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
-This ELK server is configured to monitor the following machines:
+This ELK server is configured to monitor the following machines where apache http webserver running on:
 
 | Name            | Function   | IP Addresses | Operating Systems   | Softwares           |  Port  |
 |-----------------|---------------------------|---------------------|---------------------|--------|-------
@@ -104,7 +104,13 @@ We have installed the following Beats on these machines:
 - MetricBeat (metricbeat-7.4.0-amd64.deb) - refer the ansible playbook [metricbeat-playbook.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/metricbeat-playbook.yml) 
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- FileBeat collects the logs information from apache webservers pushed to logstash, which is indexed by elasticsearch and displayed on Kibana as below
+
+![Filebeat logs](Images/filebeat-logs.png)
+
+- MetricBeat collects all the system informations like cpu, memory etc for the analysis to logstash, which is indexed by elasticsearch and displayed on Kibana as below
+
+![Metricbeat logs](Images/metricbeat-logs.png)
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
