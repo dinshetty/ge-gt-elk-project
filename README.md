@@ -6,9 +6,9 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - install-elk.yml (Ansible/install-elk.yml) - Ansible playbook for installing ELK tech stack
-  - filebeat-playbook.yml (Ansible/filebeat-playbook.yml) - Ansible playbook for installing filebeat agent on webservers
-  - metricbeat-playbook.yml (Ansible/metricbeat-playbook.yml) - Ansible playbook for installing metricbeat agent on webservers
+  - [install-elk.yml] (Ansible/install-elk.yml) - Ansible playbook for installing ELK tech stack
+  - [filebeat-playbook.yml] (Ansible/filebeat-playbook.yml) - Ansible playbook for installing filebeat agent on webservers
+  - [metricbeat-playbook.yml] (Ansible/metricbeat-playbook.yml) - Ansible playbook for installing metricbeat agent on webservers
  
 This document contains the following details:
 - Description of the Topology
