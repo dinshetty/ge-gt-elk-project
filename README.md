@@ -12,11 +12,11 @@ These files have been tested and used to generate a live ELK deployment on Azure
  
 This document contains the following details:
 - [Description of the Topology](#desc)
-- Access Policies
-- ELK Configuration
+- [Access Policies](#access)
+- [ELK Configuration](#elkconifg)
   - Beats in Use
   - Machines Being Monitored
-- How to Use the Ansible Build
+- [How to Use the Ansible Build](#ansbile)
 
 
 <a name="desc"></a>### Description of the Topology
@@ -39,7 +39,8 @@ The configuration details of each machine may be found below.
 | ge-gt-vm-web01    | Webserver  | 10.0.0.12  | Linux            |  NA           |
 | ge-gt-vm-web02    | Webserver  | 10.0.0.13  | Linux            |  NA           | 
 
-### Access Policies
+
+<a name="access"></a>### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -73,7 +74,7 @@ Network Access Group - Inbound rules for ELK to allow specific client IP to acce
 ![NSG ELK](Images/elk-nsg.png)
 
 
-### Elk Configuration
+<a name="elkconifg"></a>### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because the same configuration machine can be built again & again without any human intervention. Refer to anisble playbook - [install-elk.yml](https://github.com/dinshetty/ge-gt-elk-project/tree/main/Ansible/install-elk.yml) for aditional details. Below explains each section in playbook
 
@@ -128,7 +129,7 @@ These Beats allow us to collect the following information from each machine:
 
 ![Metricbeat logs](Images/metricbeat-logs.png)
 
-### Using the Playbook
+<a name="ansible">### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
