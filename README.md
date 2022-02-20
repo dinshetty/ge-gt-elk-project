@@ -84,7 +84,7 @@ The playbook implements the following tasks:
   
 - Enable docker service to kickoff on machine restart/on boot
 
-  ![Start Docker as service](Images/docker-boot)
+  ![Start Docker as service](Images/docker-boot.png)
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
